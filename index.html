@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Nova ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#0d0d0d;
+color:white;
+overflow-x:hidden;
+}
+
+#hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:1;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+url('foto7.jpg');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+z-index:2;
+max-width:700px;
+}
+
+.hero h1{
+font-size:55px;
+font-family:'Dancing Script',cursive;
+color:#ff7bb6;
+margin-bottom:15px;
+}
+
+.hero h2{
+font-size:28px;
+margin-bottom:20px;
+}
+
+.hero p{
+line-height:1.8;
+opacity:.9;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+background:#ff4f9a;
+border-radius:40px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+section{
+padding:80px 20px;
+position:relative;
+z-index:2;
+}
+
+.title{
+text-align:center;
+font-size:38px;
+margin-bottom:40px;
+color:#ff7bb6;
+}
+
+.counter{
+text-align:center;
+font-size:28px;
+font-weight:bold;
+line-height:1.8;
+}
+
+.counter-box{
+background:#151515;
+padding:30px;
+border-radius:20px;
+max-width:800px;
+margin:auto;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+transition:.5s;
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.letter{
+max-width:900px;
+margin:auto;
+background:#151515;
+padding:40px;
+border-radius:25px;
+line-height:2;
+font-size:18px;
+}
+
+.reason-box{
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.reason-btn{
+padding:15px 30px;
+border:none;
+background:#ff4f9a;
+color:white;
+font-size:18px;
+border-radius:40px;
+cursor:pointer;
+}
+
+.reason{
+margin-top:25px;
+font-size:24px;
+min-height:80px;
+}
+
+.memory{
+max-width:1000px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#151515;
+padding:25px;
+border-radius:20px;
+}
+
+.card h3{
+color:#ff7bb6;
+margin-bottom:10px;
+}
+
+.final{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.final h1{
+font-size:65px;
+font-family:'Dancing Script',cursive;
+color:#ff7bb6;
+}
+
+.final p{
+margin-top:20px;
+font-size:22px;
+}
+
+#fireworks{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:1;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.modal img{
+max-width:90%;
+max-height:90%;
+border-radius:20px;
+}
+
+.music{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#ff4f9a;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:25px;
+cursor:pointer;
+z-index:999;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+.final h1{
+font-size:45px;
+}
+
+.title{
+font-size:30px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<canvas id="hearts"></canvas>
+<canvas id="fireworks"></canvas>
+
+<div class="music" onclick="toggleMusic()">
+🎵
+</div>
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1 id="typing"></h1>
+
+<h2>Untuk Novausma Ilmira ❤️</h2>
+
+<p>
+Terima kasih telah hadir dalam hidupku.
+Setiap hari bersamamu adalah cerita yang ingin selalu kuingat.
+</p>
+
+<a href="#counter" class="btn" onclick="startLoveStory()">
+Buka Cerita Kita ❤️
+</a>
+
+</div>
+
+</section>
+
+<section id="counter">
+
+<h2 class="title">⏳ Lama Kita Bersama</h2>
+
+<div class="counter-box">
+
+<div class="counter" id="loveCounter"></div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">📸 Galeri Kenangan</h2>
+
+<div class="gallery">
+
+<img src="foto1.jpg" onclick="show(this.src)">
+<img src="foto2.jpg" onclick="show(this.src)">
+<img src="foto3.jpg" onclick="show(this.src)">
+<img src="foto4.jpg" onclick="show(this.src)">
+<img src="foto5.jpg" onclick="show(this.src)">
+<img src="foto6.jpg" onclick="show(this.src)">
+<img src="foto7.jpg" onclick="show(this.src)">
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">💌 Surat Untukmu</h2>
+
+<div class="letter">
+
+Hai Nova,
+
+<br><br>
+
+Aku mungkin tidak selalu pandai mengungkapkan perasaan,
+tetapi aku ingin kamu tahu bahwa kehadiranmu adalah salah satu hal terbaik yang pernah terjadi dalam hidupku.
+
+<br><br>
+
+Terima kasih karena selalu ada.
+Terima kasih karena mau bertahan.
+Terima kasih karena sudah menjadi seseorang yang membuat hari-hariku terasa lebih berarti.
+
+<br><br>
+
+Setiap senyummu adalah alasan untuk bahagia.
+Setiap tawamu adalah suara favoritku.
+
+<br><br>
+
+Aku tidak tahu bagaimana masa depan akan berjalan,
+tetapi aku ingin terus menciptakan cerita bersamamu.
+
+<br><br>
+
+Aku akan selalu memilihmu,
+hari ini,
+besok,
+dan selama yang aku bisa.
+
+<br><br>
+
+❤️ Ahmad Ridwan
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">🌹 Alasan Aku Sayang Kamu</h2>
+
+<div class="reason-box">
+
+<button class="reason-btn" onclick="randomReason()">
+Klik Aku ❤️
+</button>
+
+<div class="reason" id="reason">
+...
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">✨ Kenangan Kita</h2>
+
+<div class="memory">
+
+<div class="card">
+<h3>🌹 Pertemuan</h3>
+<p>Setiap kisah indah selalu punya awal yang sederhana.</p>
+</div>
+
+<div class="card">
+<h3>😊 Tawa</h3>
+<p>Bersamamu bahkan hari biasa terasa istimewa.</p>
+</div>
+
+<div class="card">
+<h3>❤️ Perjalanan</h3>
+<p>Semoga masih banyak cerita yang akan kita buat bersama.</p>
+</div>
+
+<div class="card">
+<h3>🌙 Harapan</h3>
+<p>Aku ingin selalu menjadi alasan senyummu.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="final">
+
+<div>
+
+<h1>
+Aku Akan Selalu Memilihmu ❤️
+</h1>
+
+<p>
+Terima kasih sudah menjadi bagian terindah dalam hidupku.
+</p>
+
+</div>
+
+</section>
+
+<div class="modal" id="modal" onclick="closeModal()">
+<img id="modalImg">
+</div>
+
+<script>
+
+const text="Ahmad Ridwan ❤️ Novausma Ilmira";
+let i=0;
+
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,100);
+}
+}
+
+typing();
+
+function startLoveStory(){
+
+const audio=document.getElementById("music");
+
+if(audio.paused){
+
+audio.volume=0;
+
+audio.play();
+
+let volume=0;
+
+const fade=setInterval(()=>{
+
+if(volume<0.8){
+
+volume+=0.05;
+audio.volume=volume;
+
+}else{
+
+clearInterval(fade);
+
+}
+
+},200);
+
+}
+
+}
+
+const startDate=new Date("2025-12-12");
+
+function updateCounter(){
+
+const now=new Date();
+
+const diff=now-startDate;
+
+const days=Math.floor(diff/(1000*60*60*24));
+const hours=Math.floor((diff/(1000*60*60))%24);
+const minutes=Math.floor((diff/(1000*60))%60);
+const seconds=Math.floor((diff/1000)%60);
+
+document.getElementById("loveCounter").innerHTML=
+days+" Hari "+
+hours+" Jam "+
+minutes+" Menit "+
+seconds+" Detik";
+
+}
+
+setInterval(updateCounter,1000);
+
+const reasons=[
+"Kamu membuat hariku lebih indah",
+"Senyummu adalah favoritku",
+"Kamu selalu mendukungku",
+"Kamu membuatku merasa berarti",
+"Kamu adalah rumah bagiku",
+"Aku nyaman saat bersamamu",
+"Kamu cantik luar dan dalam",
+"Kamu selalu ada saat aku butuh",
+"Kamu membuatku ingin menjadi lebih baik",
+"Aku mencintaimu apa adanya",
+"Aku suka caramu tertawa",
+"Aku suka semua cerita tentangmu",
+"Kamu spesial",
+"Kamu berharga",
+"Kamu adalah alasanku tersenyum"
+];
+
+function randomReason(){
+
+const random=Math.floor(Math.random()*reasons.length);
+
+document.getElementById("reason").innerHTML=
+reasons[random];
+
+}
+
+function show(src){
+document.getElementById("modal").style.display="flex";
+document.getElementById("modalImg").src=src;
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+function toggleMusic(){
+
+const audio=document.getElementById("music");
+
+if(audio.paused){
+audio.play();
+}else{
+audio.pause();
+}
+
+}
+
+const heartCanvas=document.getElementById("hearts");
+const hctx=heartCanvas.getContext("2d");
+
+heartCanvas.width=window.innerWidth;
+heartCanvas.height=window.innerHeight;
+
+let hearts=[];
+
+for(let i=0;i<50;i++){
+
+hearts.push({
+x:Math.random()*heartCanvas.width,
+y:Math.random()*heartCanvas.height,
+size:Math.random()*10+5,
+speed:Math.random()*2+1
+});
+
+}
+
+function drawHeart(x,y,s){
+
+hctx.fillStyle="#ff4f9a";
+
+hctx.beginPath();
+
+hctx.moveTo(x,y);
+
+hctx.bezierCurveTo(x-s,y-s,x-2*s,y+s,x,y+2*s);
+
+hctx.bezierCurveTo(x+2*s,y+s,x+s,y-s,x,y);
+
+hctx.fill();
+
+}
+
+function animateHearts(){
+
+hctx.clearRect(
+0,
+0,
+heartCanvas.width,
+heartCanvas.height
+);
+
+hearts.forEach(h=>{
+
+drawHeart(h.x,h.y,h.size);
+
+h.y+=h.speed;
+
+if(h.y>heartCanvas.height){
+h.y=-20;
+}
+
+});
+
+requestAnimationFrame(animateHearts);
+
+}
+
+animateHearts();
+
+const fire=document.getElementById("fireworks");
+const fctx=fire.getContext("2d");
+
+fire.width=window.innerWidth;
+fire.height=window.innerHeight;
+
+let particles=[];
+
+function createFirework(){
+
+let x=Math.random()*fire.width;
+let y=Math.random()*fire.height/2;
+
+for(let i=0;i<60;i++){
+
+particles.push({
+x:x,
+y:y,
+dx:(Math.random()-0.5)*6,
+dy:(Math.random()-0.5)*6,
+life:100
+});
+
+}
+
+}
+
+setInterval(createFirework,2000);
+
+function animateFire(){
+
+fctx.clearRect(0,0,fire.width,fire.height);
+
+particles.forEach((p,index)=>{
+
+p.x+=p.dx;
+p.y+=p.dy;
+p.life--;
+
+fctx.fillStyle=
+"rgba(255,120,180,"+(p.life/100)+")";
+
+fctx.beginPath();
+
+fctx.arc(p.x,p.y,2,0,Math.PI*2);
+
+fctx.fill();
+
+if(p.life<=0){
+particles.splice(index,1);
+}
+
+});
+
+requestAnimationFrame(animateFire);
+
+}
+
+animateFire();
+
+</script>
+
+</body>
+</html>
